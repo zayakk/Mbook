@@ -19,9 +19,8 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
 
 
-
 const FirstRoute = () => (
-  
+
   
   <View style={{ flex: 1, backgroundColor: "#FFB6C1" }}>
     <ScrollView       >
@@ -326,93 +325,144 @@ const FirstRoute = () => (
 
         
 
-      <View style={{ }}>
-            {/* Арын зураг - Тогтвортой үлдэнэ */}
-            <Image 
+<View style={{ }}>
+  {/* Арын зураг - Тогтвортой үлдэнэ */}
+  <Image
+    source={{
+      uri: "https://images.pexels.com/photos/3109850/pexels-photo-3109850.jpeg?cs=srgb&dl=pexels-anniroenkae-3109850.jpg&fm=jpg",
+    }}
+    style={{
+      width: "100%",
+      height: 300,
+      position: "absolute",
+      top: 0,
+      left: 0,
+      borderBottomLeftRadius: 20,
+      borderBottomRightRadius: 20,
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.3,
+      shadowRadius: 4,
+    }}
+  />
 
-              source={{ uri: "https://www.shutterstock.com/image-photo/abstract-dark-blue-light-background-600nw-2488953281.jpg" }} 
-              style={{width: "100%", height: 300, position: "absolute"}} 
+  <View style={{ marginTop: 10, padding: 15 }}>
+    <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 10 }}>
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <Text style={{ color: "white", fontSize: 18, fontWeight: "bold" }}>Credit books</Text>
+        <MaterialCommunityIcons name="star-shooting-outline" size={20} color="yellow" style={{ marginLeft: 5 }} />
+      </View>
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <Text style={{ fontWeight: "500", color: "#BE3144", fontSize: 20 }}>Бүгд</Text>
+        <AntDesign name="arrowright" size={18} color="purple" style={{ marginLeft: 5 }} />
+      </View>
+    </View>
+
+    <Text
+      numberOfLines={2}
+      ellipsizeMode="tail"
+      style={{
+        margin: 5,
+        color: "white",
+        fontSize: 14,
+        lineHeight: 20,
+        flexShrink: 1,
+        flexDirection: "row",
+        alignItems: "center",
+      }}
+    >
+      Subscription үйлчилгээг идэвхжүүлээд доорх номнуудаас 1-г сонгон сонсоорой
+      <FontAwesome name="hourglass-start" size={14} color="pink" style={{ marginLeft: 10 }} />
+    </Text>
+  </View>
+
+  {/* Дээр нь `ScrollView` ажиллана */}
+  {/* <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+  <View style={{ flexDirection: "row", marginLeft: 5 }}>
+    {Array.from({ length: 5 }).map((_, index) => (
+      <View key={index} style={{ position: "relative" }}>
+        <Image
+          style={{
+            width: 150,
+            height: 120,
+            borderRadius: 10,
+            marginRight: 10,
+            borderWidth: 2,
+            borderColor: "#fff",
+          }}
+          source={{
+            uri: "ccccccccccccccccc",
+          }}
+        />
+        <AntDesign
+          name="heart"
+          size={18}
+          color="purple"
+          style={{ position: "absolute", top: 5, right: 40 }}
+        />
+        <Text style={{ color: "white", fontSize: 12, fontWeight: "bold", textAlign: "center" }}>
+          Саяака Мурата
+        </Text>
+        <Text
+          numberOfLines={2}
+          ellipsizeMode="tail"
+          style={{
+            color: "white",
+            textAlign: "center",
+            fontSize: 12,
+            marginTop: 5,
+            flexWrap: "wrap",
+            flexShrink: 1
+          }}
+        >
+          Нэрийн дэлгүүрийн эмэгтэйа
+        </Text>
+      </View>
+    ))}
+  </View>
+</ScrollView> */}
+
+<ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        {Array.from({ length: 15 }).map((_, index) => (
+          <View key={index} style={{ width: 160  }}>
+            <Image
+              style={{
+                width: 150,
+                height: 120,
+                borderRadius: 10,
+                marginRight: 10,
+                borderWidth: 2,
+                borderColor: "#fff",}}
+              source={{
+                uri: "https://t4.ftcdn.net/jpg/08/11/83/31/360_F_811833149_6MO2TGZ02dt9amBMVcWSpN1hD7Il2b8C.jpg",
+              }}
+              onError={() => console.log("Image load failed!")}
             />
-
-              <View >
-                <View style={{flexDirection: "row", justifyContent: "space-between"}}>
-                  <View style={{flexDirection: "row"  }}>
-                    <Text style={{color: "white" }}> Credit books </Text>
-                    <MaterialCommunityIcons name="star-shooting-outline" size={20} color="yellow" />
-                  </View>
-                  <View style={{ flexDirection: "row", alignItems: "flex-end"}}>
-                    <Text style={{ fontWeight: 800 , color: "white"}}> Бүгд </Text>
-                    <AntDesign name="arrowright" size={18} color="purple" style={{marginLeft:5}} />
-                  </View>
-                </View>
-
-                {/* <View style={{flexDirection: "row"}}> */}
-                    <Text 
-                    numberOfLines={2} 
-                    ellipsizeMode="tail" 
-                    style={{margin: 5, color: "white" , flexShrink: 1, flexDirection: "row"}} >Subscription үйлчилгээг идэвхжүүлээд доорх номнуудаас 1-г сонгон сонсоорой
-                    <FontAwesome name="hourglass-start" size={14} color="pink" style={{marginLeft: 10}} />
-                    </Text>
-                {/* </View> */}
-              </View>
-
-              
-
-            {/* Дээр нь `ScrollView` ажиллана */}
-            <ScrollView 
-              horizontal={true}
-              showsHorizontalScrollIndicator={false} 
-              contentContainerStyle={{
-
-            }}>
-              {/* Дэлгэцийн контент */}
-              <View style={{ height: 70 , marginLeft: 5}}>
-                <ScrollView
-                  horizontal
-                  showsHorizontalScrollIndicator={false}
-                  contentContainerStyle={{}}
-                >
-                  {Array.from({ length: 5 }).map((_, index) => (
-                    <Image
-                      key={index}
-                      style={{}}
-                      source={{
-                        uri: "https://img.freepik.com/free-vector/mobile_677411-3342.jpg",
-                      }}
-                    />
-                  ))}
-                </ScrollView>
-              </View>
-
-              {/* Онцлох номнууд */}
-
-              {/* Хэвтээ гүйлгэх хэсэг */}
-              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {Array.from({ length: 15 }).map((_, index) => (
-                  <View key={index} >
-                    <Image
-                      source={{
-                        uri: "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAzL3JtNjA2ZGVzaWduLXJlbWl4LWJnLTEzLWEuanBn.jpg",
-                      }}
-                    />
-                    <AntDesign
-                      name="heart"
-                      size={18}
-                      color="purple"
-                    />
-                    <Text style={{color: "white"}}>Саяака Мурата</Text>
-                    <Text numberOfLines={2} ellipsizeMode="tail" 
-                        style={{color: "white"}}>
-                        Нэрийн дэлгүүрийн эмэгтэй
-                    </Text>
-                  </View>
-                ))}
-              </ScrollView>
-            </ScrollView>
+            <AntDesign
+              name="heart" 
+              size={18} 
+              color="#00008B" 
+              style={{
+                position: "absolute",
+                right: 15,
+                top: 2,
+              }} 
+            />
+            <Text style={{ color: "white", marginLeft: 10 , fontSize: 8 }}>Саяака Мурата</Text>
+            <Text 
+              numberOfLines={2} 
+              ellipsizeMode="tail" 
+              style={{ fontSize: 10, marginLeft: 10, flexShrink: 1 , color: "white"}}>
+              Нэрийн дэлгүүрийн эмэгтэй
+            </Text>
           </View>
+        ))}
+      </ScrollView>
+
+</View>
 
 
-<Text style={{margin: 90}}>  </Text>
+<Text style={{margin: 5 }}>  </Text>
 
 
           <View style= {{flexDirection: "row", justifyContent: "space-between", margin: 10}}>
@@ -521,7 +571,7 @@ const FirstRoute = () => (
 
 
 
-<Text style={{margin: 70}}>  </Text>
+<Text style={{margin: 40}}>  </Text>
     </ScrollView>
   </View>
 );
