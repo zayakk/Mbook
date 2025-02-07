@@ -462,7 +462,7 @@ const FirstRoute = () => (
 </View>
 
 
-<Text style={{margin: 5 }}>  </Text>
+<Text style={{margin: 10 }}>  </Text>
 
 
           <View style= {{flexDirection: "row", justifyContent: "space-between", margin: 10}}>
