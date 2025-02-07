@@ -22,7 +22,7 @@ import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
 const FirstRoute = () => (
 
   
-  <View style={{ flex: 1, backgroundColor: "#FF748B" }}>
+  <View style={{ flex: 1, backgroundColor: "#FFE1FF" }}>
     <ScrollView       >
       <View style={{ height: 150 }}>
         <ScrollView
@@ -294,7 +294,7 @@ const FirstRoute = () => (
             <Image
               style={styles.imgContainer}
               source={{
-                uri: "https://mrp.market.mn/products/picture/000/011/207/original.webp?1667533715",
+                uri: "https://quirkycatsfatstacks.com/wp-content/uploads/2022/11/lavender-house.jpg?w=1024",
               }}
               onError={() => console.log("Image load failed!")}
             />
@@ -349,7 +349,7 @@ const FirstRoute = () => (
   <View style={{ marginTop: 10, padding: 15 }}>
     <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 10 }}>
       <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <Text style={{ color: "white", fontSize: 18, fontWeight: "bold" }}>Credit books</Text>
+        <Text style={{ color: "#7E60BF", fontSize: 18, fontWeight: "bold" }}>Credit books</Text>
         <MaterialCommunityIcons name="star-shooting-outline" size={20} color="yellow" style={{ marginLeft: 5 }} />
       </View>
       <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -363,7 +363,7 @@ const FirstRoute = () => (
       ellipsizeMode="tail"
       style={{
         margin: 5,
-        color: "white",
+        color: "#7E60BF",
         fontSize: 14,
         lineHeight: 20,
         flexShrink: 1,
@@ -536,7 +536,7 @@ const FirstRoute = () => (
         {Array.from({ length: 15 }).map((_, index) => (
           <View key={index} style={{ position: "relative" }}>
           <Image
-            style={{ width: 100, height: 100, borderRadius: 50 }}
+            style={{ width: 100, height: 100, borderRadius: 50 , borderWidth: 2, borderColor:"#EE66A6"}}
             source={{
               uri: "https://media.istockphoto.com/id/1442556244/photo/portrait-of-young-beautiful-woman-with-perfect-smooth-skin-isolated-over-white-background.jpg?s=612x612&w=0&k=20&c=4S7HufG4HDXznwuxFdliWndEAcWGKGvgqC45Ig0Zqog=",
             }}
