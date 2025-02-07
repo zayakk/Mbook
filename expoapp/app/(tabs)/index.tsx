@@ -22,7 +22,7 @@ import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
 const FirstRoute = () => (
 
   
-  <View style={{ flex: 1, backgroundColor: "#FFB6C1" }}>
+  <View style={{ flex: 1, backgroundColor: "#FF748B" }}>
     <ScrollView       >
       <View style={{ height: 150 }}>
         <ScrollView
@@ -135,7 +135,7 @@ const FirstRoute = () => (
      <View style= {{flexDirection: "row", justifyContent: "space-between", margin: 10}}>
           <View >
               <View style={{ flexDirection: "row" }}>
-                <Text style={{ fontWeight: 800 }}> Зөвхөн Mbook ээс </Text>
+                <Text style={{ fontWeight: 800 }}> Зөвхөн Zaya.mn ээс </Text>
                 <Feather name="headphones" size={18} color="purple" style={{marginLeft:5}}/>
               </View>
               <View style={{}}>
@@ -228,14 +228,14 @@ const FirstRoute = () => (
             <Image
               style={styles.imgContainer}
               source={{
-                uri: "https://christmasstories.org/wp-content/uploads/2024/12/image-30.png?w=816",
+                uri: "https://i.pinimg.com/736x/0f/88/a7/0f88a7e08116b48f009b1ba5da6c3d51.jpg",
               }}
               onError={() => console.log("Image load failed!")}
             />
             <MaterialCommunityIcons 
               name="headphones-box" 
               size={18} 
-              color="#00008B" 
+              color="#A888B5" 
               style={{
                 position: "absolute",
                 right: 13,
@@ -329,7 +329,7 @@ const FirstRoute = () => (
   {/* Арын зураг - Тогтвортой үлдэнэ */}
   <Image
     source={{
-      uri: "https://images.pexels.com/photos/3109850/pexels-photo-3109850.jpeg?cs=srgb&dl=pexels-anniroenkae-3109850.jpg&fm=jpg",
+      uri: "https://png.pngtree.com/thumb_back/fw800/background/20231014/pngtree-gorgeous-pink-abstract-texture-with-a-stunning-color-palette-image_13663904.png",
     }}
     style={{
       width: "100%",
