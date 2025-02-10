@@ -22,11 +22,9 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 const Header = () => (
   <View style={styles.headerContainer}>
-    <View style={styles.leftContainer}>
-      <Feather name="menu" size={24} color="black" style={styles.icon} />
-      <Text style={styles.headerTitle}>Zayajj</Text>
-    </View>
+      <Text style={styles.headerTitle}>ZAYAHAN beino</Text>
     <View style={styles.rightContainer}>
+      <AntDesign name="contacts" size={24} color="black" style={{padding: 5}} />
       <AntDesign name="search1" size={24} color="black" />
     </View>
   </View>
@@ -34,8 +32,7 @@ const Header = () => (
 
 const FirstRoute = () => (
   <View style={{ flex: 1, backgroundColor: "#FFE1FF" }}>
-    
-    <ScrollView       >
+    <ScrollView >
       <View style={{ height: 150 }}>
         <ScrollView
           horizontal={true}
@@ -613,14 +610,9 @@ const renderScene = SceneMap({
   second: SecondRoute,
   third: ThirdRoute,
   a: ThirdRoute,
-  b: ThirdRoute,
-  c: ThirdRoute,
-  d: ThirdRoute,
-  e: ThirdRoute,
-  f: ThirdRoute,
-  g: ThirdRoute,
-  h: ThirdRoute,
-  i: ThirdRoute,
+  // b: ThirdRoute,
+  // c: ThirdRoute,
+  // d: ThirdRoute,
 });
 
 const routes = [
@@ -628,9 +620,9 @@ const routes = [
   { key: "second", title: "Аудио ном" },
   { key: "third", title: "Цахим ном" },
   { key: "a", title: "Цахим ном" },
-  { key: "b", title: "Цахим ном" },
-  { key: "c", title: "Цахим ном" },
-  { key: "d", title: "Цахим ном" },
+  // { key: "b", title: "Цахим ном" },
+  // { key: "c", title: "Цахим ном" },
+  // { key: "d", title: "Цахим ном" },
 ];
 
 
@@ -639,7 +631,7 @@ export default function index() {
   const [index, setIndex] = React.useState(0);
   return (
     <SafeAreaView style={styles.container}>
-      
+      <Header />
       <TabView
         navigationState={{ index, routes }}
         renderScene={renderScene}
@@ -692,13 +684,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     padding: 15,
-    backgroundColor: "#fff",
-    borderBottomWidth: 10,
-    borderBottomColor: "#ddd",
-  },
-  leftContainer: {
-    flexDirection: "row",
-    alignItems: "center",
+    backgroundColor: "#FFE1Ff",
   },
   icon: {
     marginRight: 10,
@@ -706,10 +692,12 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 20,
     fontWeight: "bold",
+    textAlign:"left"
   },
   rightContainer: {
     flexDirection: "row",
     alignItems: "center",
+    
   },
 
   // Content styles
