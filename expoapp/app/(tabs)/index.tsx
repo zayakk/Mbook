@@ -4,6 +4,7 @@ import {
   Text,
   StyleSheet,
   Platform,
+  Animated,
   StatusBar,
   useWindowDimensions,
   Image,
@@ -17,12 +18,23 @@ import Feather from '@expo/vector-icons/Feather';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
+const Header = () => (
+  <View style={styles.headerContainer}>
+    <View style={styles.leftContainer}>
+      <Feather name="menu" size={24} color="black" style={styles.icon} />
+      <Text style={styles.headerTitle}>Zayajj</Text>
+    </View>
+    <View style={styles.rightContainer}>
+      <AntDesign name="search1" size={24} color="black" />
+    </View>
+  </View>
+);
 
 const FirstRoute = () => (
-
-  
   <View style={{ flex: 1, backgroundColor: "#FFE1FF" }}>
+    
     <ScrollView       >
       <View style={{ height: 150 }}>
         <ScrollView
@@ -40,12 +52,12 @@ const FirstRoute = () => (
 
           {Array.from({ length: 5 }).map((_, index) => (
             <Image
-              key={index} // Key нэмэх
+              key={index} 
               style={styles.imgContainer1}
               source={{
                 uri: "https://res.cloudinary.com/hgchxeahe/image/upload/v1697012357/z3dopeliqbn1ritae9ty.jpg",
               }}
-              onError={() => console.log("Image load failed!")} // source биш, Image дээр бичих
+              onError={() => console.log("Image load failed!")} 
             />
           ))}
 
@@ -91,15 +103,17 @@ const FirstRoute = () => (
             onError={() => console.log("Image load failed!")}
           />
           
-          {/* Зүрхэн icon (таалагдсан эсэх) */}
           <AntDesign  
             name="heart"  
-            size={18} 
+            size={16} 
             color="purple" 
             style={{ 
               position: "absolute",
-              right: 15,   // Зүүнээс биш, баруун талд байрлуулна
-              top: 2,     // Дээр байрлуулна
+              right: 15,   
+              top: 2,    
+              // backgroundColor: "white",
+              // borderRadius: 50,
+              // padding: 2 
             }}  
           />
 
@@ -163,13 +177,16 @@ const FirstRoute = () => (
               onError={() => console.log("Image load failed!")}
             />
             <MaterialCommunityIcons 
-              name="headphones-box" 
-              size={18} 
+              name="headphones" 
+              size={16} 
               color="#00008B" 
               style={{
                 position: "absolute",
                 right: 13,
                 top: 2,
+                backgroundColor: "white",
+                borderRadius: 50,
+                padding: 1
               }} 
             />
             <Text style={{ color: "#040720", marginLeft: 10 , fontSize: 8 }}>Ц. Оюунгэрэл</Text>
@@ -233,13 +250,15 @@ const FirstRoute = () => (
               onError={() => console.log("Image load failed!")}
             />
             <MaterialCommunityIcons 
-              name="headphones-box" 
-              size={18} 
+              name="headphones" 
+              size={16} 
               color="#A888B5" 
               style={{
                 position: "absolute",
                 right: 13,
+                backgroundColor: "white", borderRadius: 50,
                 top: 2,
+                padding: 1
               }} 
             />
             <Text style={{ color: "#040720", marginLeft: 10 , fontSize: 8 }}>Доктор Сьюз</Text>
@@ -290,7 +309,7 @@ const FirstRoute = () => (
     >
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {Array.from({ length: 15 }).map((_, index) => (
-          <View key={index} style={{ width: 120 }}>
+          <View key={index} style={{ width: 120 }}> 
             <Image
               style={styles.imgContainer}
               source={{
@@ -307,6 +326,9 @@ const FirstRoute = () => (
                 position: "absolute",
                 right: 13,
                 top: 2,
+                backgroundColor: "white", borderRadius: 50,
+                // borderWidth:5
+
               }} 
             />
             <Text 
@@ -490,14 +512,17 @@ const FirstRoute = () => (
             }}
             onError={() => console.log("Image load failed!")}
           />
-            <MaterialCommunityIcons 
-              name="headphones-box" 
-              size={18} 
+            <FontAwesome5 
+              name="headphones" 
+              size={16} 
               color="#00008B" 
               style={{
                 position: "absolute",
                 right: 13,
                 top: 2,
+                backgroundColor: "white",
+                borderRadius: 50,
+                padding: 1
               }} 
             />
             <Text style={{ color: "#040720", marginLeft: 10 , fontSize: 8 }}>Антуан де Сент-Экзюпери</Text>
@@ -542,9 +567,6 @@ const FirstRoute = () => (
             }}
             onError={() => console.log("Image load failed!")}
           />
-
-        
-
           <Text 
             numberOfLines={2} 
             ellipsizeMode="tail" 
@@ -554,7 +576,8 @@ const FirstRoute = () => (
                 marginLeft: 15, 
                 fontSize: 10,  
                 width: 100, 
-                flexShrink: 1 
+                flexShrink: 1,
+                
               }
             }
           >  Тринити
@@ -610,11 +633,13 @@ const routes = [
   { key: "d", title: "Цахим ном" },
 ];
 
+
 export default function index() {
   const layout = useWindowDimensions();
   const [index, setIndex] = React.useState(0);
   return (
     <SafeAreaView style={styles.container}>
+      
       <TabView
         navigationState={{ index, routes }}
         renderScene={renderScene}
@@ -661,5 +686,38 @@ const styles = StyleSheet.create({
     height: "100%",
     resizeMode: "cover",
     zIndex: -1, // Арын зураг доор үлдэнэ
+  },
+  headerContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 15,
+    backgroundColor: "#fff",
+    borderBottomWidth: 10,
+    borderBottomColor: "#ddd",
+  },
+  leftContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  icon: {
+    marginRight: 10,
+  },
+  headerTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  rightContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+
+  // Content styles
+  scrollView: {
+    padding: 15,
+  },
+  contentText: {
+    fontSize: 16,
+    marginVertical: 10,
   },
 });
