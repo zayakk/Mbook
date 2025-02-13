@@ -22,7 +22,9 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 const Header = () => (
   <View style={styles.headerContainer}>
-      <Text style={styles.headerTitle}>ZAYAHAN beino</Text>
+      <Text style={styles.headerTitle}>ZAYAKK 
+      <AntDesign  name="heart" size= {20} color="purple" style={{ margin:50 }} />
+      </Text>
     <View style={styles.rightContainer}>
       <AntDesign name="contacts" size={24} color="black" style={{padding: 5}} />
       <AntDesign name="search1" size={24} color="black" />
@@ -692,7 +694,8 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 20,
     fontWeight: "bold",
-    textAlign:"left"
+    textAlign:"left",
+    margin: 5
   },
   rightContainer: {
     flexDirection: "row",
